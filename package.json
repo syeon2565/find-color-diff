@@ -44,6 +44,9 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@commitlint/types": "^17.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^8.19.0",
     "eslint-config-airbnb": "^19.0.4",
