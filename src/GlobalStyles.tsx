@@ -28,7 +28,6 @@ const GlobalStyle = createGlobalStyle`
 	}
 	body {
 		line-height: 1;
-		font-family: 'Gugi', cursive;
 	}
 	ol, ul {
 		list-style: none;
