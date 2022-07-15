@@ -15,7 +15,7 @@ type BlockProps = {
 const Board = ({ stage, onClick }: BoardProps) => {
   const row = (Math.round((stage + 0.5) / 2) + 1) ** 2;
   const size = 360 / Math.sqrt(row);
-  const answerIdx = Math.round(Math.random() * (row - 0));
+  const answerIdx = Math.round(Math.random() * (row - 1));
   const r = `${Math.floor(Math.random() * 256)}`;
   const g = `${Math.floor(Math.random() * 256)}`;
   const b = `${Math.floor(Math.random() * 256)}`;
