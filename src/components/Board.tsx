@@ -5,8 +5,6 @@ import styled from "styled-components";
 type BoardProps = {
   stage: number;
   onClick?: () => void;
-  time: number;
-  setTime: (time: number) => void;
 };
 
 type BlockProps = {
@@ -14,17 +12,13 @@ type BlockProps = {
   color: string;
 };
 
-const Board = ({ stage, onClick, time, setTime }: BoardProps) => {
+const Board = ({ stage, onClick }: BoardProps) => {
   const row = (Math.round((stage + 0.5) / 2) + 1) ** 2;
   const size = 360 / Math.sqrt(row);
   const answerIdx = Math.round(Math.random() * (row - 0));
   const color = `${Math.floor(Math.random() * 256)}`;
   const baseColor = `rgb(${color},${color},${color})`;
   const answerColor = `rgba(${color},${color},${color},0.1)`;
-
-  const handleFailure = () => {
-    setTime(time - 3);
-  };
 
   return (
     <BoardWrapper row={Math.sqrt(row)}>
@@ -34,12 +28,7 @@ const Board = ({ stage, onClick, time, setTime }: BoardProps) => {
           i === answerIdx ? (
             <Block key={i} size={size} color={answerColor} onClick={onClick} />
           ) : (
-            <Block
-              key={i}
-              size={size}
-              color={baseColor}
-              onClick={handleFailure}
-            />
+            <Block key={i} size={size} color={baseColor} onClick={onClick} />
           ),
         )}
     </BoardWrapper>
@@ -61,4 +50,4 @@ const Block = styled.div<BlockProps>`
   border: 1px solid white;
 `;
 
-export default Board;
+export default React.memo(Board);
