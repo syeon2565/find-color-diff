@@ -16,9 +16,11 @@ const Board = ({ stage, onClick }: BoardProps) => {
   const row = (Math.round((stage + 0.5) / 2) + 1) ** 2;
   const size = 360 / Math.sqrt(row);
   const answerIdx = Math.round(Math.random() * (row - 0));
-  const color = `${Math.floor(Math.random() * 256)}`;
-  const baseColor = `rgb(${color},${color},${color})`;
-  const answerColor = `rgba(${color},${color},${color},0.1)`;
+  const r = `${Math.floor(Math.random() * 256)}`;
+  const g = `${Math.floor(Math.random() * 256)}`;
+  const b = `${Math.floor(Math.random() * 256)}`;
+  const baseColor = `rgb(${r},${g},${b})`;
+  const answerColor = `rgba(${r},${g},${b},0.7)`;
 
   return (
     <BoardWrapper row={Math.sqrt(row)}>
