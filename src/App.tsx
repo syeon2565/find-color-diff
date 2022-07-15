@@ -11,7 +11,7 @@ function App() {
     setStage(stage + 1);
     setScore(stage ** 3 * time);
     setTime(15);
-  }, []);
+  }, [stage]);
 
   useEffect(() => {
     setInterval(() => {
