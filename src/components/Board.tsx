@@ -4,7 +4,8 @@ import styled from "styled-components";
 
 type BoardProps = {
   stage: number;
-  onClick?: () => void;
+  handleSuccess: () => void;
+  handleFailure: () => void;
 };
 
 type BlockProps = {
@@ -12,7 +13,7 @@ type BlockProps = {
   color: string;
 };
 
-const Board = ({ stage, onClick }: BoardProps) => {
+const Board = ({ stage, handleSuccess, handleFailure }: BoardProps) => {
   const row = (Math.round((stage + 0.5) / 2) + 1) ** 2;
   const size = 360 / Math.sqrt(row);
   const answerIdx = Math.round(Math.random() * (row - 1));
@@ -24,15 +25,14 @@ const Board = ({ stage, onClick }: BoardProps) => {
 
   return (
     <BoardWrapper row={Math.sqrt(row)}>
-      {new Array(row)
-        .fill(null)
-        .map((r, i) =>
-          i === answerIdx ? (
-            <Block key={i} size={size} color={answerColor} onClick={onClick} />
-          ) : (
-            <Block key={i} size={size} color={baseColor} onClick={onClick} />
-          ),
-        )}
+      {new Array(row).fill(null).map((r, i) => (
+        <Block
+          key={i}
+          size={size}
+          color={i === answerIdx ? answerColor : baseColor}
+          onClick={i === answerIdx ? handleSuccess : handleFailure}
+        />
+      ))}
     </BoardWrapper>
   );
 };

@@ -13,6 +13,10 @@ function App() {
     setTime(15);
   }, [stage]);
 
+  const handleFailure = useCallback(() => {
+    setTime((time) => time - 3);
+  }, [stage]);
+
   useEffect(() => {
     setInterval(() => {
       setTime((time) => time - 1);
@@ -29,7 +33,11 @@ function App() {
   return (
     <>
       <Header stage={stage} time={time} score={score} />
-      <Board stage={stage} onClick={handleSuccess} />
+      <Board
+        stage={stage}
+        handleSuccess={handleSuccess}
+        handleFailure={handleFailure}
+      />
     </>
   );
 }
