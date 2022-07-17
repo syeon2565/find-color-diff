@@ -4,8 +4,8 @@ import styled from "styled-components";
 
 type BoardProps = {
   stage: number;
-  handleSuccess: () => void;
-  handleFailure: () => void;
+  handleSuccess: React.MouseEventHandler<HTMLDivElement>;
+  handleFailure: React.MouseEventHandler<HTMLDivElement>;
 };
 
 type BlockProps = {
