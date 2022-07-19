@@ -18,9 +18,10 @@ function App() {
   }, [stage]);
 
   useEffect(() => {
-    setInterval(() => {
+    const timer = setInterval(() => {
       setTime((time) => time - 1);
     }, 1000);
+    return clearInterval(timer);
   }, []);
 
   if (time < 0) {
