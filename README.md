@@ -1,46 +1,44 @@
-# Getting Started with Create React App
+### \***\*1. 아래 페이지 클론 코딩\*\***
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Thinking in React](https://numble-react.vercel.app/)
 
-## Available Scripts
+이번 챌린지에선 마크업보다 데이터 흐름, 컴포넌트 구분에 집중해주세요!
 
-In the project directory, you can run:
+- 상세 스펙은 다음과 같아요
+  - `**Math.pow(Math.round((stage + 0.5) / 2) + 1, 2)**`개의 사각형이 표시되며, 그 중 하나만 색깔이 다릅니다.
+  - 한 stage의 제한 시간은 15초입니다.
+  - 색이 다른 사각형(정답)을 클릭한 경우 아래 변경사항이 적용됩니다.
+    - 다음 스테이지로 넘어갑니다.
+    - **Math.pow(stage, 3) \* 남은시간** 만큼의 score가 누적됩니다
+  - 오답을 클릭한 경우 아래 변경사항이 적용됩니다.
+    - 현재 stage의 남은 시간이 3초 줄어듭니다.
+  - 남은 시간이 0초 이하가 되면 게임이 종료됩니다. 최종 stage와 누적 score를 출력하고, 새로운 게임을 시작할 수 있습니다.
+  - stage가 올라갈수록 정답과 오답의 색상 차이가 줄어듭니다.
 
-### `yarn start`
+### 2. **다음 조건에 맞게 진행**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. React Framework를 사용할 것
+2. Function Component를 활용할 것
+3. Javascript보다는 Typescript를 활용할 것
+4. 서버에 배포할 것 (Vercel과 같은 서비스를 이용해보세요)
+5. Context, Redux, Mobx, Recoil 등 상태관리 도구를 사용하지 않을 것
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### **3. 결과물을 아래와 같은 형식으로 제출**
 
-### `yarn test`
+1. 배포한 서비스 URL
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ex. [https://www.numble.it](https://www.numble.it/)
 
-### `yarn build`
+1. Github 주소
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Public 저장소에 올려주세요
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. 블로그 주소
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 블로그는 velog 작성을 권장드리며 블로그, 브런치 등 이미 기술블로그를 작성하는 공간이 있으시다면 다른 곳에 작성하셔도 무방합니다. Notion에 작성하시고 공유하셔도 괜찮습니다.
+- 블로그를 작성할 때는 다음과 같은 내용을 포함해주세요.
+  - 주요 코드에 대한 설명
+    - 주요 로직(ex. 소비자 구매 로직)과 그 이유
+    - 코드 내에서 고려한 특정 유저 행동과 그에 대한 대처
+  - 활용한 라이브러리와 그 이유
+  - 프로젝트를 진행할 때 어려웠던 점/고민했던 부분과 해결방법
