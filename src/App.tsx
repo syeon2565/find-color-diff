@@ -21,7 +21,8 @@ function App() {
     const timer = setInterval(() => {
       setTime((time) => time - 1);
     }, 1000);
-    return clearInterval(timer);
+
+    return () => clearInterval(timer);
   }, []);
 
   if (time < 0) {
